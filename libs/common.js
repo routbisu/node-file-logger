@@ -2,6 +2,7 @@
 
 let defaultOptions = require('./config');
 const moment = require('moment-timezone');
+const momentJS = require('moment');
 const fs = require('fs');
 const path = require('path');
 
@@ -54,7 +55,11 @@ let commonServices = {
         }
 
         // Validate file name extension
-        if(options.fileNameExtension != '');
+        if(options.fileNameExtension) defaultOptions.fileNameExtension = options.fileNameExtension.trim();
+
+        // Validate dateFormat and timeFormat
+        if(options.dateFormat) defaultOptions.dateFormat = options.dateFormat;
+        if(options.timeFormat) defaultOptions.timeFormat = options.timeFormat;
         
         return defaultOptions;
     },
