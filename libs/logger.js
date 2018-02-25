@@ -4,8 +4,6 @@ let commonServices = require('./libs/common');
 /***************************************************************************
  * Log data to a file
  * @param {object} options - User options
- * @param {string} fileName - File name to append data
- * @param {string} currentTime - Current Time
  * @param {string} logLevel - Log level
  * @param {string} errorMessage - Short error message
  * @param {string} serviceName - Service name
@@ -13,7 +11,7 @@ let commonServices = require('./libs/common');
  * @param {any} errorObj - Error Object
  * @param {function} callback - Callback function
  **************************************************************************/
-module.exports = function(options, currentTime, logLevel, errorMessage, serviceName, 
+module.exports = function(options, logLevel, errorMessage, serviceName, 
                                         methodName, errorObj, callback) {
 
     // Compute filename and timestamp

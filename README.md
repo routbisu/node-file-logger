@@ -158,7 +158,7 @@ Logs a debug message in the log file
 | **serviceName** | _Service name from which info was logged_ | string | yes |
 | **methodName** | _Method name from which info was logged_ | string | yes |
 | **errorObj** | _Error object that needs to be logged_ | object | yes |
-| **callback** | _Callback method that is called after error logging_ | function | yes |
+| **callback** | _Callback method that is called after error logging (may return an error)_ | function | yes |
 
 ### Trace()
 Logs a trace message in the log file
@@ -169,7 +169,7 @@ Logs a trace message in the log file
 | **serviceName** | _Service name from which info was logged_ | string | yes |
 | **methodName** | _Method name from which info was logged_ | string | yes |
 | **errorObj** | _Error object that needs to be logged_ | object | yes |
-| **callback** | _Callback method that is called after error logging_ | function | yes |
+| **callback** | _Callback method that is called after error logging (may return an error)_ | function | yes |
 
 ### Info()
 Logs a informational message in the log file
@@ -180,7 +180,7 @@ Logs a informational message in the log file
 | **serviceName** | _Service name from which info was logged_ | string | yes |
 | **methodName** | _Method name from which info was logged_ | string | yes |
 | **errorObj** | _Error object that needs to be logged_ | object | yes |
-| **callback** | _Callback method that is called after error logging_ | function | yes |
+| **callback** | _Callback method that is called after error logging (may return an error)_ | function | yes |
 
 ### Warn()
 Logs a warning message in the log file
@@ -191,7 +191,7 @@ Logs a warning message in the log file
 | **serviceName** | _Service name from which info was logged_ | string | yes |
 | **methodName** | _Method name from which info was logged_ | string | yes |
 | **errorObj** | _Error object that needs to be logged_ | object | yes |
-| **callback** | _Callback method that is called after error logging_ | function | yes |
+| **callback** | _Callback method that is called after error logging (may return an error)_ | function | yes |
 
 ### Error()
 Logs a error message in the log file
@@ -202,7 +202,7 @@ Logs a error message in the log file
 | **serviceName** | _Service name from which info was logged_ | string | yes |
 | **methodName** | _Method name from which info was logged_ | string | yes |
 | **errorObj** | _Error object that needs to be logged_ | object | yes |
-| **callback** | _Callback method that is called after error logging_ | function | yes |
+| **callback** | _Callback method that is called after error logging (may return an error)_ | function | yes |
 
 ### Fatal()
 Logs a fatal error message in the log file
@@ -213,17 +213,17 @@ Logs a fatal error message in the log file
 | **serviceName** | _Service name from which info was logged_ | string | yes |
 | **methodName** | _Method name from which info was logged_ | string | yes |
 | **errorObj** | _Error object that needs to be logged_ | object | yes |
-| **callback** | _Callback method that is called after error logging_ | function | yes |
+| **callback** | _Callback method that is called after error logging (may return an error)_ | function | yes |
 
 ### Log()
-Used to log any kind of log message in the log file
+Used to log any kind of log message in the log file (Custom Log level)
 
 | Parameter | Description | Datatype | Optional |
 | --------- |-------------| ---------| -------- |
-| **logLevel** | _Log level - 'debug', 'trace', 'info', 'warn', 'error', 'fatal'_ | string | no |
+| **logLevel** | _Log level - 'debug', 'trace', 'info', 'warn', 'error', 'fatal', on any custom log level _ | string | no |
 | **errorMessage** | _Error message to be logged in the file_ | string | no |
 | **serviceName** | _Service name from which info was logged_ | string | yes |
 | **methodName** | _Method name from which info was logged_ | string | yes |
 | **errorObj** | _Error object that needs to be logged_ | object | yes |
-| **callback** | _Callback method that is called after error logging_ | function | yes |
+| **callback** | _Callback method that is called after error logging (may return an error)_ | function | yes |
 
