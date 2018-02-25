@@ -89,7 +89,7 @@ log.Info('Some informational log message');
 
 // *****************************************************
 // Ouput in Logfile: 
-// File name : Logs_2018_02_23.log
+// File name : ./logs/Logs_2018_02_23.log
 // 5:52:28 PM | Some informational log message
 // *****************************************************
 
@@ -98,7 +98,7 @@ log.Error('Something has failed!', 'Some service', 'Some method');
 
 // *****************************************************
 // Ouput in Logfile: 
-// File name : Logs_2018_02_23.log
+// File name : ./logs/Logs_2018_02_23.log
 // 5:52:28 PM | Service: Some service | Method: Some method | Some error message
 // *****************************************************
 
@@ -107,7 +107,7 @@ log.Fatal('Something has failed!', 'Some service', 'Some method', errorObj);
 
 // *****************************************************
 // Ouput in Logfile: 
-// File name : Logs_2018_02_23.log
+// File name : ./logs/Logs_2018_02_23.log
 // 5:52:28 PM | Service: Some service | Method: Some method | Something is broken
 {
   unhandledException: Something serious has happened
@@ -120,3 +120,41 @@ log.Info('Something has failed!', null, null, null, function() {
 });
 
 ```
+
+## Simple logging to a file without date-based file naming
+```javascript
+const options = {
+  folderPath: './logs/',
+  dateBasedFileNaming: false,
+  fileName: 'All_Logs.log', 
+  dateFormat: 'YYYY_MM_D',
+  timeFormat: 'h:mm:ss A',
+}
+
+const logger = require('node-file-logger');
+const log = logger(options);
+
+// Log a simple error message
+log.Info('Some informational log message');
+
+
+// *****************************************************
+// Ouput in Logfile: 
+// File name : ./logs/All_Logs.log
+// 2018_02_23 5:52:28 PM | Some informational log message
+// *****************************************************
+```
+
+# API Reference
+## Methods:
+- Debug(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
+- Trace(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
+- Info(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
+- Warn(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
+- Error(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
+- Fatal(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
+
+- Log(logLevel, errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
+
+### Valid values of logLevel
+'debug', 'trace', 'info', 'warn', 'error', 'fatal'
