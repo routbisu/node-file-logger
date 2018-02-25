@@ -12,12 +12,12 @@ A simple logger for logging exceptions and error details in a log file.
 
 # Features
 ## Suports all logging levels
-DEBUG: The DEBUG Level designates fine-grained informational events that are most useful to debug an application. 
-TRACE: The TRACE Level designates finer-grained informational events than the DEBUG 
-INFO: The INFO level designates informational messages that highlight the progress of the application at coarse-grained level. 
-WARN: The WARN level designates potentially harmful situations. 
-ERROR: The ERROR level designates error events that might still allow the application to continue running.
-FATAL: The FATAL level designates very severe error events that will presumably lead the application to abort. 
+- DEBUG: The DEBUG Level designates fine-grained informational events that are most useful to debug an application. 
+- TRACE: The TRACE Level designates finer-grained informational events than the DEBUG 
+- INFO: The INFO level designates informational messages that highlight the progress of the application at coarse-grained level. 
+- WARN: The WARN level designates potentially harmful situations. 
+- ERROR: The ERROR level designates error events that might still allow the application to continue running.
+- FATAL: The FATAL level designates very severe error events that will presumably lead the application to abort. 
 
 ## Create date-wise log files
 It has an option to create a new log file for the current date which will be named like YYYY-MM-DD-log.log
