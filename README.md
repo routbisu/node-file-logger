@@ -227,3 +227,7 @@ Used to log any kind of log message in the log file (Custom Log level)
 | **errorObj** | _Error object that needs to be logged_ | object | yes |
 | **callback** | _Callback method that is called after error logging (may return an error)_ | function | yes |
 
+## License
+
+MIT
+
