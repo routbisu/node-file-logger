@@ -152,68 +152,76 @@ Logs a debug message in the log file
 
 | Parameter | Description | Datatype | Optional |
 | --------- |-------------| ---------| -------- |
-| **errorMessage** | Error message to be logged in the file | string | no |
-| **serviceName** | Service name from which info was logged | string | yes |
-| **methodName** | Method name from which info was logged | string | yes |
-| **errorObj** | Error object that needs to be logged | object | yes |
-| **callback** | Callback method that is called after error logging | function | yes |
+| **errorMessage** | _Error message to be logged in the file_ | string | no |
+| **serviceName** | _Service name from which info was logged_ | string | yes |
+| **methodName** | _Method name from which info was logged_ | string | yes |
+| **errorObj** | _Error object that needs to be logged_ | object | yes |
+| **callback** | _Callback method that is called after error logging_ | function | yes |
 
 ### Trace()
 Logs a trace message in the log file
 
 | Parameter | Description | Datatype | Optional |
 | --------- |-------------| ---------| -------- |
-| **errorMessage** | Error message to be logged in the file | string | no |
-| **serviceName** | Service name from which info was logged | string | yes |
-| **methodName** | Method name from which info was logged | string | yes |
-| **errorObj** | Error object that needs to be logged | object | yes |
-| **callback** | Callback method that is called after error logging | function | yes |
+| **errorMessage** | _Error message to be logged in the file_ | string | no |
+| **serviceName** | _Service name from which info was logged_ | string | yes |
+| **methodName** | _Method name from which info was logged_ | string | yes |
+| **errorObj** | _Error object that needs to be logged_ | object | yes |
+| **callback** | _Callback method that is called after error logging_ | function | yes |
 
 ### Info()
 Logs a informational message in the log file
 
 | Parameter | Description | Datatype | Optional |
 | --------- |-------------| ---------| -------- |
-| **errorMessage** | Error message to be logged in the file | string | no |
-| **serviceName** | Service name from which info was logged | string | yes |
-| **methodName** | Method name from which info was logged | string | yes |
-| **errorObj** | Error object that needs to be logged | object | yes |
-| **callback** | Callback method that is called after error logging | function | yes |
+| **errorMessage** | _Error message to be logged in the file_ | string | no |
+| **serviceName** | _Service name from which info was logged_ | string | yes |
+| **methodName** | _Method name from which info was logged_ | string | yes |
+| **errorObj** | _Error object that needs to be logged_ | object | yes |
+| **callback** | _Callback method that is called after error logging_ | function | yes |
 
 ### Warn()
 Logs a warning message in the log file
 
 | Parameter | Description | Datatype | Optional |
 | --------- |-------------| ---------| -------- |
-| **errorMessage** | Error message to be logged in the file | string | no |
-| **serviceName** | Service name from which info was logged | string | yes |
-| **methodName** | Method name from which info was logged | string | yes |
-| **errorObj** | Error object that needs to be logged | object | yes |
-| **callback** | Callback method that is called after error logging | function | yes |
+| **errorMessage** | _Error message to be logged in the file_ | string | no |
+| **serviceName** | _Service name from which info was logged_ | string | yes |
+| **methodName** | _Method name from which info was logged_ | string | yes |
+| **errorObj** | _Error object that needs to be logged_ | object | yes |
+| **callback** | _Callback method that is called after error logging_ | function | yes |
 
 ### Error()
 Logs a error message in the log file
 
 | Parameter | Description | Datatype | Optional |
 | --------- |-------------| ---------| -------- |
-| **errorMessage** | Error message to be logged in the file | string | no |
-| **serviceName** | Service name from which info was logged | string | yes |
-| **methodName** | Method name from which info was logged | string | yes |
-| **errorObj** | Error object that needs to be logged | object | yes |
-| **callback** | Callback method that is called after error logging | function | yes |
+| **errorMessage** | _Error message to be logged in the file_ | string | no |
+| **serviceName** | _Service name from which info was logged_ | string | yes |
+| **methodName** | _Method name from which info was logged_ | string | yes |
+| **errorObj** | _Error object that needs to be logged_ | object | yes |
+| **callback** | _Callback method that is called after error logging_ | function | yes |
 
 ### Fatal()
 Logs a fatal error message in the log file
 
 | Parameter | Description | Datatype | Optional |
 | --------- |-------------| ---------| -------- |
-| **errorMessage** | Error message to be logged in the file | string | no |
-| **serviceName** | Service name from which info was logged | string | yes |
-| **methodName** | Method name from which info was logged | string | yes |
-| **errorObj** | Error object that needs to be logged | object | yes |
-| **callback** | Callback method that is called after error logging | function | yes |
+| **errorMessage** | _Error message to be logged in the file_ | string | no |
+| **serviceName** | _Service name from which info was logged_ | string | yes |
+| **methodName** | _Method name from which info was logged_ | string | yes |
+| **errorObj** | _Error object that needs to be logged_ | object | yes |
+| **callback** | _Callback method that is called after error logging_ | function | yes |
 
-- **_Log_**(logLevel, errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
+### Log()
+Used to log any kind of log message in the log file
 
-### Valid values of logLevel
-'debug', 'trace', 'info', 'warn', 'error', 'fatal'
+| Parameter | Description | Datatype | Optional |
+| --------- |-------------| ---------| -------- |
+| **logLevel** | _Log level - 'debug', 'trace', 'info', 'warn', 'error', 'fatal'_ | string | no |
+| **errorMessage** | _Error message to be logged in the file_ | string | no |
+| **serviceName** | _Service name from which info was logged_ | string | yes |
+| **methodName** | _Method name from which info was logged_ | string | yes |
+| **errorObj** | _Error object that needs to be logged_ | object | yes |
+| **callback** | _Callback method that is called after error logging_ | function | yes |
+
