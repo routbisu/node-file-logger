@@ -12,7 +12,8 @@ A simple logger for logging exceptions and error details in a log file.
 
 # Docs & Features
 ## Dependencies
-Moment.js
+moment.js 
+moment-timezone.js 
 
 ## Suports all logging levels
 - DEBUG: The DEBUG Level designates fine-grained informational events that are most useful to debug an application. 
@@ -50,6 +51,7 @@ const logger = nfl(options); // Options are optional
 // It is recommended to set options in a separate module and include it in the code
 // Everything in the example below are default values
 const options = {
+  timeZone: 'America/Los_Angeles',
   folderPath: './logs/',      
   dateBasedFileNaming: true,
   // Required only if dateBasedFileNaming is set to false
@@ -60,7 +62,7 @@ const options = {
   fileNameExtension: '.log',     
   
   dateFormat: 'YYYY-MM-DD',
-  timeFormat: 'HH:mm:ss.SSS',
+  timeFormat: 'HH:mm:ss.SSS'
 }
 
 // Note: If you set dateBasedFileNaming to false, then a log file will be created at the folder path with the provided fileName.
