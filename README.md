@@ -147,14 +147,14 @@ log.Info('Some informational log message');
 
 # API Reference
 ## Methods:
-`
+```
 - **Debug**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
 - **Trace**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
 - **Info**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
 - **Warn**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
 - **Error**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
 - **Fatal**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
-`
+```
 
 - **_Log_**(logLevel, errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
 
