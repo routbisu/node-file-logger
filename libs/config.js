@@ -3,7 +3,7 @@ let options = {
     folderPath: './logs/',      
     dateBasedFileNaming: true,
     // Required only if dateBasedFileNaming is set to false
-    fileName: '',   
+    fileName: 'All_Logs',   
     // Required only if dateBasedFileNaming is set to true
     fileNamePrefix: 'Logs_',
     fileNameSuffix: '',

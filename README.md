@@ -55,7 +55,7 @@ const options = {
   folderPath: './logs/',      
   dateBasedFileNaming: true,
   // Required only if dateBasedFileNaming is set to false
-  fileName: '',   
+  fileName: 'All_Logs',   
   // Required only if dateBasedFileNaming is set to true
   fileNamePrefix: 'Logs_',
   fileNameSuffix: '',
@@ -92,7 +92,7 @@ log.Info('Some informational log message');
 // *****************************************************
 // Ouput in Logfile: 
 // File name : ./logs/Logs_2018_02_23.log
-// 5:52:28 PM | Some informational log message
+// 5:52:28 PM | Info | Some informational log message
 // *****************************************************
 
 // Log an error message with service and method names
@@ -101,7 +101,7 @@ log.Error('Something has failed!', 'Some service', 'Some method');
 // *****************************************************
 // Ouput in Logfile: 
 // File name : ./logs/Logs_2018_02_23.log
-// 5:52:28 PM | Service: Some service | Method: Some method | Some error message
+// 5:52:28 PM | Error | Service: Some service | Method: Some method | Some error message
 // *****************************************************
 
 // Log an fatal error message with service and method names and error object
@@ -110,7 +110,7 @@ log.Fatal('Something has failed!', 'Some service', 'Some method', errorObj);
 // *****************************************************
 // Ouput in Logfile: 
 // File name : ./logs/Logs_2018_02_23.log
-// 5:52:28 PM | Service: Some service | Method: Some method | Something is broken
+// 5:52:28 PM | Fatal | Service: Some service | Method: Some method | Something is broken
 {
   unhandledException: Something serious has happened
 }
@@ -143,7 +143,7 @@ log.Info('Some informational log message');
 // *****************************************************
 // Ouput in Logfile: 
 // File name : ./logs/All_Logs.log
-// 2018_02_23 5:52:28 PM | Some informational log message
+// 2018_02_23 5:52:28 PM | Info | Some informational log message
 // *****************************************************
 ```
 

@@ -44,7 +44,20 @@ let commonServices = {
             if(options.fileName && options.fileName.trim() != '') {
                 console.log(warningPrefix + 'dateBasedFileName is set to true, so fileName parameter will be ignored');
             }
+
+            if(!options.fileNamePrefix || options.fileNamePrefix.trim() == '') {
+                console.log(warningPrefix + 'Filename prefix is not set. Will be set to default' + defaultOptions.fileNamePrefix);
+            } else {
+                defaultOptions.fileNamePrefix = options.fileNamePrefix;
+            }
+
         } else {
+            if(!options.fileName || options.fileName.trim() == '') {
+                console.log(warningPrefix + 'Filename is not set. Will be set to default' + defaultOptions.fileName);
+            } else {
+                defaultOptions.fileName = options.fileName;
+            }
+
             if(options.fileNamePrefix  && options.fileNamePrefix.trim() != '') {
                 console.log(warningPrefix + 'dateBasedFileName is set to false, so fileNamePrefix parameter will be ignored');
             }
@@ -82,6 +95,16 @@ let commonServices = {
         }
 
         return fileLocation;
+    },
+
+    /**
+     * Get log file name when date based naming is not enabled
+     */
+    GetLogFileName: function() {
+        let filePath = path.join(defaultOptions.folderPath, 
+            defaultOptions.fileName + defaultOptions.fileNameExtension);
+
+        return filePath;
     }
 }
 
