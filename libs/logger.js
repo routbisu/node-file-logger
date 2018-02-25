@@ -1,5 +1,6 @@
 const fs = require('fs');
-let commonServices = require('./libs/common');
+const commonServices = require('./common');
+const moment = require('moment-timezone');
 
 /***************************************************************************
  * Log data to a file
@@ -34,16 +35,17 @@ module.exports = function(options, logLevel, errorMessage, serviceName,
     let errorLine = currentTime + ' | ' 
                     + logLevel + ' | ' 
                     + errorMessage + ' | '
-                    + serviceName ? ('Service: ' + serviceName + ' | ') : ''
-                    + methodName ? ('Method: ' + methodName + ' | ') : ''
-                    + errorObj ? ('\n' + JSON.stringify(errorDetails) + '\n') : '';
+                    + (serviceName ? ('Service: ' + serviceName + ' | ') : '')
+                    + (methodName ? ('Method: ' + methodName + ' | ') : '')
+                    + (errorObj ? ('\n' + JSON.stringify(errorObj)) : '')
                     + '\n';
     
+                    console.log(errorLine);
 
     fs.appendFile(fileName, errorLine, (err) => {
         if(err) {
             console.log('Node file logger Error: ' + err);
         }
-        callback(err);
+        if(callback) callback(err);
     });
 }

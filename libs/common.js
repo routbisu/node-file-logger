@@ -30,30 +30,33 @@ let commonServices = {
         } 
         
         // Validate time zone
-        if(options.timeZone && moment.tz.zone(options.timeZone)) {
-            defaultOptions.timeZone = options.timeZone;
-        } else {
-            console.log(warningPrefix + 'Invalid timezone. Set to default: ' + defaultOptions.timeZone);
+        if(options.timeZone) {
+            if(moment.tz.zone(options.timeZone)) {
+                defaultOptions.timeZone = options.timeZone;
+            } else {
+                console.log(warningPrefix + 'Invalid timezone. Set to default: ' + defaultOptions.timeZone);
+            }
         }
 
         // Validate dateBasedFileName
-        defaultOptions.dateBasedFileNaming = options.dateBasedFileNaming;
+        if(options.dateBasedFileNaming !== undefined)
+            defaultOptions.dateBasedFileNaming = options.dateBasedFileNaming;
 
         // Validate file name
         if(defaultOptions.dateBasedFileNaming) {
             if(options.fileName && options.fileName.trim() != '') {
                 console.log(warningPrefix + 'dateBasedFileName is set to true, so fileName parameter will be ignored');
             }
-
-            if(!options.fileNamePrefix || options.fileNamePrefix.trim() == '') {
-                console.log(warningPrefix + 'Filename prefix is not set. Will be set to default' + defaultOptions.fileNamePrefix);
-            } else {
-                defaultOptions.fileNamePrefix = options.fileNamePrefix;
+            if(options.fileNamePrefix) {
+                if(options.fileNamePrefix.trim() == '') {
+                    console.log(warningPrefix + 'Filename prefix is not set. Will be set to default: ' + defaultOptions.fileNamePrefix);
+                } else {
+                    defaultOptions.fileNamePrefix = options.fileNamePrefix;
+                }
             }
-
         } else {
             if(!options.fileName || options.fileName.trim() == '') {
-                console.log(warningPrefix + 'Filename is not set. Will be set to default' + defaultOptions.fileName);
+                console.log(warningPrefix + 'Filename is not set. Will be set to default: ' + defaultOptions.fileName);
             } else {
                 defaultOptions.fileName = options.fileName;
             }

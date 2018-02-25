@@ -15,11 +15,15 @@ const logger = require('./libs/logger');
 let options = require('./libs/config');
 let commonServices = require('./libs/common');
 
-// Set user options
-options = commonServices.ValidateOptions(options);
-commonServices.SetOptions(options);
+let nodeFileLogger = {
 
-let log = {
+    /**
+     * Set user options
+     */
+    SetUserOptions : function(options) {
+        options = commonServices.ValidateOptions(options);
+        commonServices.SetOptions(options);
+    },
 
     /**
     * Log a debug message in log file
@@ -107,4 +111,4 @@ let log = {
     }
 }
 
-
+module.exports = nodeFileLogger;
