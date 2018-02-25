@@ -147,12 +147,71 @@ log.Info('Some informational log message');
 
 # API Reference
 ## Methods:
-- **Debug**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
-- **Trace**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
-- **Info**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
-- **Warn**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
-- **Error**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
-- **Fatal**(errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
+### Debug()
+Logs a debug message in the log file
+
+| Parameter | Description | Datatype | Optional |
+| --------- |-------------| ---------| -------- |
+| **errorMessage** | Error message to be logged in the file | string | no |
+| **serviceName** | Service name from which info was logged | string | yes |
+| **methodName** | Method name from which info was logged | string | yes |
+| **errorObj** | Error object that needs to be logged | object | yes |
+| **callback** | Callback method that is called after error logging | function | yes |
+
+### Trace()
+Logs a trace message in the log file
+
+| Parameter | Description | Datatype | Optional |
+| --------- |-------------| ---------| -------- |
+| **errorMessage** | Error message to be logged in the file | string | no |
+| **serviceName** | Service name from which info was logged | string | yes |
+| **methodName** | Method name from which info was logged | string | yes |
+| **errorObj** | Error object that needs to be logged | object | yes |
+| **callback** | Callback method that is called after error logging | function | yes |
+
+### Info()
+Logs a informational message in the log file
+
+| Parameter | Description | Datatype | Optional |
+| --------- |-------------| ---------| -------- |
+| **errorMessage** | Error message to be logged in the file | string | no |
+| **serviceName** | Service name from which info was logged | string | yes |
+| **methodName** | Method name from which info was logged | string | yes |
+| **errorObj** | Error object that needs to be logged | object | yes |
+| **callback** | Callback method that is called after error logging | function | yes |
+
+### Warn()
+Logs a warning message in the log file
+
+| Parameter | Description | Datatype | Optional |
+| --------- |-------------| ---------| -------- |
+| **errorMessage** | Error message to be logged in the file | string | no |
+| **serviceName** | Service name from which info was logged | string | yes |
+| **methodName** | Method name from which info was logged | string | yes |
+| **errorObj** | Error object that needs to be logged | object | yes |
+| **callback** | Callback method that is called after error logging | function | yes |
+
+### Error()
+Logs a error message in the log file
+
+| Parameter | Description | Datatype | Optional |
+| --------- |-------------| ---------| -------- |
+| **errorMessage** | Error message to be logged in the file | string | no |
+| **serviceName** | Service name from which info was logged | string | yes |
+| **methodName** | Method name from which info was logged | string | yes |
+| **errorObj** | Error object that needs to be logged | object | yes |
+| **callback** | Callback method that is called after error logging | function | yes |
+
+### Fatal()
+Logs a fatal error message in the log file
+
+| Parameter | Description | Datatype | Optional |
+| --------- |-------------| ---------| -------- |
+| **errorMessage** | Error message to be logged in the file | string | no |
+| **serviceName** | Service name from which info was logged | string | yes |
+| **methodName** | Method name from which info was logged | string | yes |
+| **errorObj** | Error object that needs to be logged | object | yes |
+| **callback** | Callback method that is called after error logging | function | yes |
 
 - **_Log_**(logLevel, errorMessage, serviceName (optional), methodName (optional), errorObj (optional), callback (optional))
 
