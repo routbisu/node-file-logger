@@ -9,7 +9,9 @@ let options = {
     fileNameSuffix: '',
     fileNameExtension: '.log',         
     dateFormat: 'YYYY-MM-DD',
-    timeFormat: 'HH:mm:ss.SSS'
+    timeFormat: 'HH:mm:ss.SSS',
+    logLevel: 'debug',
+    onlyFileLogging: true
 }
 
 module.exports = options;

@@ -62,7 +62,9 @@ const options = {
   fileNameExtension: '.log',     
   
   dateFormat: 'YYYY-MM-DD',
-  timeFormat: 'HH:mm:ss.SSS'
+  timeFormat: 'HH:mm:ss.SSS',
+  logLevel: 'debug',
+  onlyFileLogging: true
 }
 
 // Note: If you set dateBasedFileNaming to false, then a log file will be created at the folder path with the provided fileName.
@@ -149,6 +151,38 @@ log.Info('Some informational log message');
 
 # API Reference
 ## Methods:
+
+### SetUserOptions()
+Sets user options for node file logger
+
+| Parameter | Description | Datatype | Optional |
+| --------- |-------------| ---------| -------- |
+| **object** | _Configuration Object_ | object | no |
+
+#### Details of the configuration object
+
+| Parameter | Description | Datatype | Default Value |
+| --------- |-------------| ---------| -------- |
+| **folderPath** | _Path of the folder where log file will be saved_ | string | ./logs/ |
+| **dateBasedFileNaming** | _If set to true, date based file naming standard will be followed for log file_ | boolean |true |
+| **fileName** | _Needed in case of single log file, where dateBasedFileNaming is set to false_ | string | All_Logs |
+| **fileNamePrefix** | _Log file name prefix_ | string | Logs_ |
+| **fileNameSuffix** | _Log file name suffix_ | string | '' |
+| **fileNameExtension** | _Log file name extension_ | string | .log |
+| **dateFormat** | _Date format for timestamp logging_ | string | YYYY-MM-DD |
+| **timeFormat** | _Time format for timestamp logging_ | string | HH:mm:ss.SSS |
+| **logLevel** | _Allowed values - debug, prod, prod-trace (Details below)_ | string | debug |
+| **onlyFileLogging** | _If set to false then messages are logged to console as well_ | boolean | true |
+
+#### Details of log levels
+'prod' and 'prod-trace' levels are suitable for production releases
+
+| Log level name | Description |
+| --------- |-------------| 
+| debug | All log level messages are logged |
+| prod | Only 'warn', 'info', 'error' and 'fatal' messages are logged. 'debug' and 'trace' messages are not logged. |
+| prod-trace | Only 'debug' messages are not logged. All the others are logged.  |
+
 ### Debug()
 Logs a debug message in the log file
 

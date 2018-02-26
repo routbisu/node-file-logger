@@ -76,6 +76,21 @@ let commonServices = {
         // Validate dateFormat and timeFormat
         if(options.dateFormat) defaultOptions.dateFormat = options.dateFormat;
         if(options.timeFormat) defaultOptions.timeFormat = options.timeFormat;
+
+        // Validate log levels
+        if(options.logLevel) {
+            if(options.logLevel.toLowerCase() !== 'debug' &&
+                options.logLevel.toLowerCase() !== 'prod' &&
+                options.logLevel.toLowerCase() !== 'prod-trace') {
+                    console.log(warningPrefix + 'Invalid log level. Will be set to default: ' + defaultOptions.logLevel);
+                } else {
+                    defaultOptions.logLevel = options.logLevel;
+                }
+        }
+
+        // Validate onlyFileLogging
+        if(options.onlyFileLogging !== undefined)
+            defaultOptions.onlyFileLogging = options.onlyFileLogging;
         
         return defaultOptions;
     },

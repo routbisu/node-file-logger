@@ -15,6 +15,22 @@ const moment = require('moment-timezone');
 module.exports = function(options, logLevel, errorMessage, serviceName, 
                                         methodName, errorObj, callback) {
 
+    // Log messages based on log-level
+    // If logLevel is prod or prod-trace then dont log debug/trace messages
+    if(options.logLevel.toLowerCase() === 'prod') {
+        if(logLevel) {
+            if(logLevel.toLowerCase() === 'debug' || logLevel.toLowerCase() === 'trace')
+                return;
+        }
+    }
+
+    if(options.logLevel.toLowerCase() === 'prod-trace') {
+        if(logLevel) {
+            if(logLevel.toLowerCase() === 'debug')
+                return;
+        }
+    }
+
     // Compute filename and timestamp
     let fileName = '';
     if(options.dateBasedFileNaming) {
@@ -39,6 +55,9 @@ module.exports = function(options, logLevel, errorMessage, serviceName,
                     + (methodName ? ('Method: ' + methodName + ' | ') : '')
                     + (errorObj ? ('\n' + JSON.stringify(errorObj)) : '')
                     + '\n';
+
+    // Log to console if needed
+    if(!options.onlyFileLogging) console.log(errorLine);
 
     fs.appendFile(fileName, errorLine, (err) => {
         if(err) {
