@@ -29,7 +29,7 @@ module.exports = function(options, logLevel, errorMessage, serviceName,
     if(options.dateBasedFileNaming) {
         currentTime = time;
     } else {
-        currentTime = date + time;
+        currentTime = date + ' ' + time;
     }
 
     let errorLine = currentTime + ' | ' 
