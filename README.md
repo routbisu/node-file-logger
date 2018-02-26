@@ -229,5 +229,5 @@ Used to log any kind of log message in the log file (Custom Log level)
 
 ## License
 
-MIT
+Apache 2.0
 

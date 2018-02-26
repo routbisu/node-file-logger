@@ -20,7 +20,7 @@ module.exports = function(options, logLevel, errorMessage, serviceName,
     if(options.dateBasedFileNaming) {
         fileName = commonServices.GetCurrentDateFileName();
     } else {
-        commonServices.GetLogFileName();
+        fileName = commonServices.GetLogFileName();
     }
 
     let time = moment().tz(options.timeZone).format(options.timeFormat);
@@ -39,8 +39,6 @@ module.exports = function(options, logLevel, errorMessage, serviceName,
                     + (methodName ? ('Method: ' + methodName + ' | ') : '')
                     + (errorObj ? ('\n' + JSON.stringify(errorObj)) : '')
                     + '\n';
-    
-                    console.log(errorLine);
 
     fs.appendFile(fileName, errorLine, (err) => {
         if(err) {

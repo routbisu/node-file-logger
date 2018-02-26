@@ -1,12 +1,23 @@
 var log = require('./index');
 
+// log.SetUserOptions({
+//     timeZone: 'Asia/Kolkata',
+//     folderPath: './logs',      
+//     dateBasedFileNaming: true,
+//     fileNamePrefix: 'Logs_',
+//     fileNameExtension: '.log',         
+//     dateFormat: 'YYYY-MM-DD',
+//     timeFormat: 'HH:mm:ss.SSS'
+// });
+
 log.SetUserOptions({
     timeZone: 'Asia/Kolkata',
     folderPath: './logs',      
-    dateBasedFileNaming: true,
+    dateBasedFileNaming: false,
+    fileName: 'Global_Logs',
     fileNamePrefix: 'Logs_',
     fileNameExtension: '.log',         
-    dateFormat: 'YYYY-MM-DD',
+    dateFormat: 'YYYY-M-DD',
     timeFormat: 'HH:mm:ss.SSS'
 });
 
@@ -25,3 +36,5 @@ log.Info('Something has failed!', null, null, null, function() {
     // Do something
     console.log('Messages have been logged');
 });
+
+
