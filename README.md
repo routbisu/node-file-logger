@@ -85,7 +85,7 @@ const options = {
   timeFormat: 'h:mm:ss A',
 }
 
-const logger = require('node-file-logger');
+const log = require('node-file-logger');
 log.SetUserOptions(options);
 
 // Log a simple error message
