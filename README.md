@@ -42,8 +42,8 @@ It allows you to run a callback after the logging process.
 ## Create instance of Node file logger
 ```javascript
 // Ceate an instance of node file logger
-const nfl = require('node-file-logger');
-const logger = nfl(options); // Options are optional
+const log = require('node-file-logger');
+log.SetUserOptions(options); // Options are optional
 ```
 
 ## Using options
@@ -70,7 +70,7 @@ const options = {
 // Note: If you set dateBasedFileNaming to false, then a log file will be created at the folder path with the provided fileName.
 // If set to true then a logfile will be created with the name <fileName> provided in the options
 
-const logger = nfl(options); 
+log.SetUserOptions(options); 
 ```
 
 # Examples
@@ -86,7 +86,7 @@ const options = {
 }
 
 const logger = require('node-file-logger');
-const log = logger(options);
+log.SetUserOptions(options);
 
 // Log a simple error message
 log.Info('Some informational log message');
@@ -135,8 +135,8 @@ const options = {
   timeFormat: 'h:mm:ss A',
 }
 
-const logger = require('node-file-logger');
-const log = logger(options);
+const log = require('node-file-logger');
+log.SetUserOptions(options);
 
 // Log a simple error message
 log.Info('Some informational log message');
