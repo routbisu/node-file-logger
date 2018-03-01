@@ -14,6 +14,7 @@ A simple logger for logging exceptions and error details in a log file.
 ## Dependencies
 moment.js 
 moment-timezone.js 
+node-stringify.js
 
 ## Suports all logging levels
 - DEBUG: The DEBUG Level designates fine-grained informational events that are most useful to debug an application. 

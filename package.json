@@ -1,6 +1,6 @@
 {
   "name": "node-file-logger",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "A simple logger for logging exceptions and error details in log files.",
   "main": "index.js",
   "author": "Biswaranjan Rout <biswaranjan.rout1989@gmail.com>",
@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "moment": "^2.20.1",
-    "moment-timezone": "^0.5.14"
+    "moment-timezone": "^0.5.14",
+    "node-stringify": "^0.2.1"
   }
 }

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const commonServices = require('./common');
 const moment = require('moment-timezone');
+const stringify = require('node-stringify');
 
 /***************************************************************************
  * Log data to a file
@@ -49,13 +50,26 @@ module.exports = function(options, logLevel, errorMessage, serviceName,
             currentTime = date + ' ' + time;
         }
 
-        let errorLine = currentTime + ' | ' 
+        let errorLine = '';
+
+        try {
+            errorLine = currentTime + ' | ' 
                         + logLevel + ' | ' 
-                        + errorMessage + ' | '
+                        + stringify(errorMessage) + ' | '
                         + (serviceName ? ('Service: ' + serviceName + ' | ') : '')
                         + (methodName ? ('Method: ' + methodName + ' | ') : '')
-                        + (errorObj ? ('\n' + JSON.stringify(errorObj)) : '')
+                        + (errorObj ? ('\n' + stringify(errorObj)) : '')
                         + '\n';
+        }
+        catch(err) {
+            errorLine = currentTime + ' | ' 
+                        + logLevel + ' | ' 
+                        + stringify(errorMessage) + ' | '
+                        + (serviceName ? ('Service: ' + serviceName + ' | ') : '')
+                        + (methodName ? ('Method: ' + methodName + ' | ') : '')
+                        + 'Error object could not be logged'
+                        + '\n';
+        }
 
         // Log to console if needed
         if(!options.onlyFileLogging) console.log(errorLine);

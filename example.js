@@ -13,7 +13,7 @@ var log = require('./index');
 log.SetUserOptions({
     timeZone: 'Asia/Kolkata1',
     folderPath: './logs',      
-    dateBasedFileNaming: false,
+    dateBasedFileNaming: true,
     fileName: 'Global_Logs',
     fileNamePrefix: 'Logs_',
     fileNameExtension: '.log',         
