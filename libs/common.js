@@ -21,8 +21,8 @@ let commonServices = {
 
         // Validate folder name
         try {
-            if (options.folderPath && !fs.existsSync(options.folderPath)) {
-                fs.mkdirSync(options.folderPath);
+            if (options.folderPath) {
+                if (!fs.existsSync(options.folderPath)) fs.mkdirSync(options.folderPath);
                 defaultOptions.folderPath = options.folderPath;
             }
         } catch(ex) {
